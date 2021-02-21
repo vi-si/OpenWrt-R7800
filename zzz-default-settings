@@ -1,0 +1,3 @@
+# 设置CPU为性能模式
+echo "performance" >> /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
+echo "performance" >> /sys/devices/system/cpu/cpufreq/policy1/scaling_governor
