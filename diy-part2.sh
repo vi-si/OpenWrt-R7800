@@ -12,7 +12,3 @@
 
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
-
-# 设置CPU为性能模式
-echo "performance" >> /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
-echo "performance" >> /sys/devices/system/cpu/cpufreq/policy1/scaling_governor
