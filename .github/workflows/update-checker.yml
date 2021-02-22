@@ -12,8 +12,8 @@
 name: NSS Update Checker
 
 env:
-  REPO_URL: https://github.com/ACwifidude/openwrt
-  REPO_BRANCH: kernel5.4-nss-qsdk10.0
+  REPO_URL: https://github.com/fw876/helloworld
+  REPO_BRANCH: master
 
 on:
   workflow_dispatch:
