@@ -16,4 +16,16 @@
 # Add a feed source
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 
-git clone https://github.com/fw876/helloworld.git package/luci-app-ssr-plus
+# git clone https://github.com/fw876/helloworld.git package/luci-app-ssr-plus
+
+# passwall-package 
+git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
+mkdir -p tools/ucl && wget -P tools/ucl https://raw.githubusercontent.com/coolsnowwolf/lede/master/tools/ucl/Makefile 
+mkdir -p tools/upx && wget -P tools/upx https://raw.githubusercontent.com/coolsnowwolf/lede/master/tools/upx/Makefile
+sed  -i '/tools-$(CONFIG_TARGET_orion_generic)/atools-y += ucl upx' tools/Makefile
+sed  -i '/dependencies/a\\$(curdir)/upx/compile := $(curdir)/ucl/compile' tools/Makefile
+
+#update golang
+pushd feeds/packages/lang
+rm -rf golang && svn co https://github.com/openwrt/packages/trunk/lang/golang
+popd
