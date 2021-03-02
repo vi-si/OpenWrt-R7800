@@ -19,7 +19,9 @@
 # git clone https://github.com/fw876/helloworld.git package/luci-app-ssr-plus
 
 # passwall-package 
+git clone https://github.com/fw876/helloworld.git package/ssr
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
+
 mkdir -p tools/ucl && wget -P tools/ucl https://raw.githubusercontent.com/coolsnowwolf/lede/master/tools/ucl/Makefile 
 mkdir -p tools/upx && wget -P tools/upx https://raw.githubusercontent.com/coolsnowwolf/lede/master/tools/upx/Makefile
 sed  -i '/tools-$(CONFIG_TARGET_orion_generic)/atools-y += ucl upx' tools/Makefile
